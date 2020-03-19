@@ -35,13 +35,19 @@ public abstract class Habitacion {
 		return this.botinTotal;
 	}
 	
-	private int asignarIDHabitacion() {
-		Casa c = Casa.getCasa();
-		return c.getNumHabitaciones;
-	}
-	
 	public int getNumResidentes()
 	{
-		return this.listaR.getNumResidentes;
+		return this.listaR.obtenerNumResidentes();
+	}
+	
+	public boolean tienesteid(int pidHabitacion) {
+		boolean iguales=false;
+		if (this.idHabitacion==pidHabitacion) {
+			iguales=true;
+		}
+		return iguales;
+	}
+	public int getId() {
+		return this.idHabitacion;
 	}
 }
