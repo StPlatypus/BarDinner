@@ -12,13 +12,7 @@ public Residente(boolean pNoqueado) {
 
 }
 public boolean delatar() {
-	boolean x=false;
-	if (!this.noqueado){
-	x=true;}
-	return x;
-    
-    
-
+	return !this.noqueado;
 }
 public int getProbabilidadNoqueo(){
 	int prob=this.;

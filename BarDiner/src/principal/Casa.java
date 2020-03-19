@@ -42,6 +42,7 @@ public class Casa {
 	}
 	
 	public int elegirAlAzarNunHabitaciones() {
+		//formula para el random de habitaciones(int)(Math.random()*((max-min)+1))+min;
 		 return (int)(Math.random()*((11)+1))+5;
 	}
 }
