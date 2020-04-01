@@ -28,7 +28,7 @@ private ArrayList <Residente> listaR;
 
 	public int obtenerNumResidentes()
 	{
-return listaR.size();
+		return listaR.size();
 	}
 
 	private Iterator<Residente> getIterador()

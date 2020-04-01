@@ -4,10 +4,10 @@ public abstract class Habitacion {
 	
 	//atributos
 	
-	protected int idHabitacion;
-	protected ListaResidentes listaR;
-	protected int metrosCuadrados;
-	protected int botinTotal;
+	private int idHabitacion;
+	private ListaResidentes listaR;
+	private int metrosCuadrados;
+	private int botinTotal;
 	
 	//constructora
 	
@@ -44,15 +44,9 @@ public abstract class Habitacion {
 	{
 		return this.listaR.obtenerNumResidentes();
 	}
-	
-	public boolean tienesteid(int pidHabitacion) {
-		boolean iguales=false;
-		if (this.idHabitacion==pidHabitacion) {
-			iguales=true;
-		}
-		return iguales;
-	}
-	public int getId() {
+	public int getIDHabitacion()
+	{
 		return this.idHabitacion;
 	}
+	
 }

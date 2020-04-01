@@ -1,24 +1,28 @@
 package principal;
 public class Residente {
-protected boolean noqueado;
+//private boolean noqueado;
+private int idHabitacionActual;
 
-private Adulto adulto;
-private Niño niño;
-private Perro perro;
-
-public Residente(boolean pNoqueado) {
-    this.noqueado=pNoqueado;
-    
+public Residente(int pIDHabitacion) {
+   
+	this.idHabitacionActual = pIDHabitacion;
 
 }
-public boolean delatar() {
-	return !this.noqueado;
+
+public void delatarAJugador() {
+	boolean delatar =false;
+	Jugador jugador = Jugador.getJugador();
+	if (this.idHabitacionActual == jugador.getIDHabitacion())
+	{
+		jugador.
+	}
 }
-public int getProbabilidadNoqueo(){
+
+/*public abstract int getProbabilidadNoqueo(){
 	int prob=this.;
-	/*if (this.adulto!=null) {prob=this.adulto.probNoqueo;}
+	if (this.adulto!=null) {prob=this.adulto.probNoqueo;}
 	else if (this.adulto!=null) {prob=this.adulto.probNoqueo;}
-	else {prob=this.adulto.probNoqueo;} */
+	else {prob=this.adulto.probNoqueo;} 
 	return prob;
-		}
+		}*/
 }

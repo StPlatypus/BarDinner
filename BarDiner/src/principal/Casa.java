@@ -20,29 +20,55 @@ public class Casa {
 	private Iterator<Habitacion> getIterator(){
 		return this.lista.iterator();
 	}
-	public Habitacion getHabitacionPorID(int pidHabitacion) {
-		Iterator<Habitacion> itr=this.getIterator();
-		Habitacion aux=null;
-		while(itr.hasNext()) {
-			aux=itr.next();
-			if(aux.tienesteid(pidHabitacion)) {
-				return aux;
-			}
-		}
-		return null;
-	}
-	public void añadirHabitacion(Habitacion pHabitacion) {
-		if(this.getHabitacionPorID(pHabitacion.getId())==null) {
-			this.lista.add(pHabitacion);
-		}
-	}
 	public int getNumHabitaciones() {
 		return this.lista.size();
-
 	}
-	
-	public int elegirAlAzarNunHabitaciones() {
-		//formula para el random de habitaciones(int)(Math.random()*((max-min)+1))+min;
-		 return (int)(Math.random()*((11)+1))+5;
+	public Habitacion buscarHabitacionPorID(int id)
+	{
+		Iterator<Habitacion> itr = this.getIterator();
+		boolean es = false;
+		Habitacion habitacion = null;
+		while (itr.hasNext() && !es) {
+			habitacion = itr.next();
+			if (habitacion.getIDHabitacion() == id)
+			{
+				es = true;
+			}
+		}
+		if (es)
+		{
+			return habitacion;
+		}
+		else
+		{
+			System.out.println("Error. La habitacion que busca no existe.");
+			return null;
+		}
+	}
+	private int elegirAlAzarNumHabitaciones() {
+		return (int)(Math.random()*6)+4;
+	}
+	public void crearCasa()
+	{
+		int numHabitaciones = this.elegirAlAzarNumHabitaciones();
+		int habitacionElegida;
+		while (numHabitaciones != 0) {
+			habitacionElegida = (int)(Math.random()*3)+1;
+			switch (habitacionElegida) {
+			case (1):
+				Cocina cocina = new Cocina();
+				this.lista.add(cocina);
+			break;
+			case (2):
+				Cuarto cuarto = new Cuarto();
+				this.lista.add(cuarto);
+			break;
+			case (3):
+				Banio banio = new Banio();
+				this.lista.add(banio);
+			break;
+			}
+			numHabitaciones = numHabitaciones --;
+		}
 	}
 }

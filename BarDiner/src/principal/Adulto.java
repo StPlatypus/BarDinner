@@ -1,4 +1,4 @@
-package principal;
+/*package principal;
 public class Adulto extends Residente {
 	
 	
@@ -20,3 +20,4 @@ public boolean delatar() {
 	return x;}
 
 }
+*/
