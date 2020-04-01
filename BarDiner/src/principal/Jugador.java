@@ -15,7 +15,7 @@ public class Jugador {
 			}
 			public static Jugador getJugador() {
 				if(miJugador==null) {
-					miJugador=new Jugador(botin, botin);
+					miJugador=new Jugador(123,123);
 			}
 				
 			return miJugador;}
