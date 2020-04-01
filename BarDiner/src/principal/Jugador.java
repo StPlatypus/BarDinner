@@ -2,6 +2,7 @@ package principal;
 
 public class Jugador {
 		//atributos
+	//hola
 			private int botin;
 			private int idHabitacionActual;
 			private static Jugador miJugador;
