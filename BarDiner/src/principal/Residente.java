@@ -14,7 +14,7 @@ public void delatarAJugador() {
 	Jugador jugador = Jugador.getJugador();
 	if (this.idHabitacionActual == jugador.getIDHabitacion())
 	{
-		jugador.
+		jugador.perderPartida();
 	}
 }
 
