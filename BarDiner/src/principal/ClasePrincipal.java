@@ -17,9 +17,19 @@ public ClasePrincipal() {}
 		System.out.println("Si coincide usted con algun residente de la casa, este lo delatara y perdera la partida. ");
 		System.out.println("Empezamos");
 		Jugador jugador = Jugador.getJugador();
+		Teclado teclado = Teclado.getTeclado();
+		casa.crearCasa();
+		int entradaTeclado;
+		
 		while (jugador.getIDHabitacion() != 0 && !jugador.haPerdido())
 		{
-			
+			entradaTeclado = teclado.leerTeclado();
+			if (entradaTeclado >= 0 && entradaTeclado <= casa.getNumHabitaciones())
+			{
+				jugador.cambiarHabitacion(entradaTeclado);
+				casa.moverResidentes();
+				casa.
+			}
 		}
 	}
 }
