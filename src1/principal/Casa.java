@@ -71,4 +71,15 @@ public class Casa {
 			numHabitaciones = numHabitaciones --;
 		}
 	}
+	public void comprobarSiHaPerdido()
+	{
+		Iterator<Habitacion> itr = this.getIterator();
+		Habitacion habitacion;
+		boolean perdido = false;
+		while (itr.hasNext() && !perdido)
+		{
+			habitacion = itr.next();
+			perdido = habitacion.haPerdido();
+		}
+	}
 }

@@ -38,5 +38,13 @@ private ArrayList <Residente> listaR;
 	}
 	public void nuevoResidente(Residente pResidente)
 	{listaR.add(pResidente);}
+	
+	public boolean haPerdido() 
+	{
+		Iterator<Residente> itr =this.getIterador();
+		Residente residente;
+		residente = itr.next();
+		return residente.delatarAJugador();
+	}
 
 }

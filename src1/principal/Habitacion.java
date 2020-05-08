@@ -48,5 +48,9 @@ public abstract class Habitacion {
 	{
 		return this.idHabitacion;
 	}
+	public boolean haPerdido()
+	{
+		return this.listaR.haPerdido();
+	}
 	
 }

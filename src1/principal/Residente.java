@@ -9,13 +9,14 @@ public Residente(int pIDHabitacion) {
 
 }
 
-public void delatarAJugador() {
-	boolean delatar =false;
+public boolean delatarAJugador() {
 	Jugador jugador = Jugador.getJugador();
 	if (this.idHabitacionActual == jugador.getIDHabitacion())
 	{
 		jugador.perderPartida();
+		return true;
 	}
+	return false;
 }
 
 /*public abstract int getProbabilidadNoqueo(){

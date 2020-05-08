@@ -8,17 +8,20 @@ import org.junit.Test;
 
 public class JugadorTest {
 
+	Jugador jugador;
 	@Before
 	public void setUp() throws Exception {
+		jugador = Jugador.getJugador();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		jugador = null;
 	}
 
 	@Test
 	public void testGetJugador() {
-		fail("Not yet implemented");
+		assertNotNull(jugador);
 	}
 
 	@Test
