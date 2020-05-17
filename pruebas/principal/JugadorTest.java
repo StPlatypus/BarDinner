@@ -22,15 +22,16 @@ public class JugadorTest {
 
 	@Test
 	public void testGetJugador() {
-		System.out.println(jugador.getBotin());
-		jugador.cambiarHabitacion(2);
-		jugador.saquearHabtiacion();
-		System.out.println(jugador.getBotin());
+		assertNotNull(jugador);
 	}
 
 	@Test
 	public void testSaquearHabtiacion() {
-		fail("Not yet implemented");
+		System.out.println(jugador.getBotin());
+		jugador.cambiarHabitacion(2);
+		jugador.saquearHabtiacion();
+		System.out.println(jugador.getBotin());
+		assertNotSame(jugador.getBotin(),0);
 	}
 
 	@Test
