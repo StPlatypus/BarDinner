@@ -54,6 +54,10 @@ public class Jugador {
 	{
 		return this.delatado;
 	}
+	public int getBotin()
+	{
+		return this.botin;
+	}
 	/*public void golpearResidente() {
 		
 	}

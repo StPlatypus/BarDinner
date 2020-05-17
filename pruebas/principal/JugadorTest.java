@@ -7,11 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class JugadorTest {
-
+	Casa casa;
 	Jugador jugador;
 	@Before
 	public void setUp() throws Exception {
 		jugador = Jugador.getJugador();
+		casa = Casa.getCasa();
 	}
 
 	@After
@@ -21,7 +22,10 @@ public class JugadorTest {
 
 	@Test
 	public void testGetJugador() {
-		assertNotNull(jugador);
+		System.out.println(jugador.getBotin());
+		jugador.cambiarHabitacion(2);
+		jugador.saquearHabtiacion();
+		System.out.println(jugador.getBotin());
 	}
 
 	@Test
