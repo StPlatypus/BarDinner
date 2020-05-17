@@ -68,7 +68,7 @@ public class Casa {
 				this.lista.add(banio);
 			break;
 			}
-			numHabitaciones = numHabitaciones --;
+			numHabitaciones = numHabitaciones -1;
 		}
 	}
 	public void comprobarSiHaPerdido()
