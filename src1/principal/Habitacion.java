@@ -41,7 +41,7 @@ public abstract class Habitacion {
 	public int getIDHabitacion()
 	{
 		return this.idHabitacion;
-	}
+	} 
 	
 	
 }

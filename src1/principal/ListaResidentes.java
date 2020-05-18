@@ -60,7 +60,7 @@ private ArrayList <Residente> listaR;
 				residente.moverse((int)(Math.random()*numHabitaciones-1)+1);
 			}
 			
-		}
+		} 
 	}
 
 }

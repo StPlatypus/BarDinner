@@ -18,7 +18,7 @@ public boolean delatarAJugador() {
 	}
 	return false;
 }
-public void moverse(int nuevaID)
+public void moverse(int nuevaID) 
 {
 	this.idHabitacionActual = nuevaID;
 }

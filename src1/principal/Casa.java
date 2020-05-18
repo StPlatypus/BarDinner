@@ -92,4 +92,5 @@ public class Casa {
 		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
 		listaResidentes.moverResidentes(this.getNumHabitaciones());
 	}
+	//Acabado
 }
