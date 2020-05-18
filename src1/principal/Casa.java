@@ -46,7 +46,18 @@ public class Casa {
 		}
 	}
 	private int elegirAlAzarNumHabitaciones() {
-		return (int)(Math.random()*6)+4;
+		return (int)(Math.random()*5)+5;
+	}
+	private void crearResidentes()
+	{
+		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
+		int numResidentes = (int)(Math.random()*3)+3;
+		Residente residente;
+		while (numResidentes != 0)
+		{
+			residente = new Residente((int)(Math.random()*this.getNumHabitaciones()-1)+1);
+			listaResidentes.nuevoResidente(residente);
+		}
 	}
 	public void crearCasa()
 	{
@@ -70,16 +81,15 @@ public class Casa {
 			}
 			numHabitaciones = numHabitaciones -1;
 		}
+		this.crearResidentes();
 	}
 	public void comprobarSiHaPerdido()
 	{
-		Iterator<Habitacion> itr = this.getIterator();
-		Habitacion habitacion;
-		boolean perdido = false;
-		while (itr.hasNext() && !perdido)
-		{
-			habitacion = itr.next();
-			perdido = habitacion.haPerdido();
-		}
+		ListaResidentes.getListaResidentes().haPerdido();
+	}
+	public void moverResidentes()
+	{
+		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
+		listaResidentes.moverResidentes(this.getNumHabitaciones());
 	}
 }

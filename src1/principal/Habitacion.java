@@ -5,7 +5,6 @@ public abstract class Habitacion {
 	//atributos
 	
 	private int idHabitacion;
-	private ListaResidentes listaR;
 	private int metrosCuadrados;
 	private int botinTotal;
 	
@@ -39,18 +38,10 @@ public abstract class Habitacion {
 		Casa c = Casa.getCasa();
 		return c.getNumHabitaciones();
 	}
-	
-	public int getNumResidentes()
-	{
-		return this.listaR.obtenerNumResidentes();
-	}
 	public int getIDHabitacion()
 	{
 		return this.idHabitacion;
 	}
-	public boolean haPerdido()
-	{
-		return this.listaR.haPerdido();
-	}
+	
 	
 }

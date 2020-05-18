@@ -46,5 +46,21 @@ private ArrayList <Residente> listaR;
 		residente = itr.next();
 		return residente.delatarAJugador();
 	}
+	public void moverResidentes(int numHabitaciones)
+	{
+		int probabilidad;
+		Iterator<Residente> itr = this.getIterador();
+		Residente residente;
+		while (itr.hasNext())
+		{
+			residente = itr.next();
+			probabilidad = (int)(Math.random()*10);
+			if (probabilidad>=8)
+			{
+				residente.moverse((int)(Math.random()*numHabitaciones-1)+1);
+			}
+			
+		}
+	}
 
 }

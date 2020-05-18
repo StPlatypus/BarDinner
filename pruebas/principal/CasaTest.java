@@ -15,7 +15,6 @@ public class CasaTest {
 		
 		casa = Casa.getCasa();
 		
-		
 	}
 
 	@After
@@ -34,6 +33,7 @@ public class CasaTest {
 
 	@Test
 	public void testGetNumHabitaciones() {
+		
 		casa.crearCasa();
 		System.out.println(casa.getNumHabitaciones());
 		assertTrue(casa.getNumHabitaciones()>=5 && casa.getNumHabitaciones()<=10);
@@ -46,7 +46,9 @@ public class CasaTest {
 
 	@Test
 	public void testCrearCasa() {
-		fail("Not yet implemented");
+		casa.crearCasa();
+		System.out.println(casa.getNumHabitaciones());
+		assertTrue(casa.getNumHabitaciones()>=5 && casa.getNumHabitaciones()<=10);
 	}
 
 	@Test

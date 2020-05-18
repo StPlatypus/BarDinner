@@ -18,6 +18,10 @@ public boolean delatarAJugador() {
 	}
 	return false;
 }
+public void moverse(int nuevaID)
+{
+	this.idHabitacionActual = nuevaID;
+}
 
 /*public abstract int getProbabilidadNoqueo(){
 	int prob=this.;
