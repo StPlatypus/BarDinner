@@ -28,14 +28,14 @@ public class Jugador {
 		this.botin=this.botin +habi.getBotinTotal();
 	}
 
-	public boolean ruidoEnHabitacion(int pIdHabitacion) {
+	public void ruidoEnHabitacion(int pIdHabitacion) {
 		if(ListaResidentes.getListaResidentes().obtenerNumResidentes(pIdHabitacion) != 0 && (Math.random()) <= 0.8) 
 		{
-			return true;
+			System.out.println("He oido algo. Parece que hay alguien.");
 		}
 		else
 		{
-			return false;
+			System.out.println("No he oido nada.");
 		}
 	}
 	public void cambiarHabitacion(int pIdHabitacion) {

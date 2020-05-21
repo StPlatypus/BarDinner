@@ -5,17 +5,17 @@ import java.util.Iterator;
 
 public class Casa {
 	private ArrayList<Habitacion> lista;
-	private static Casa listahab;
+	private static Casa miCasa;
 	
 	private Casa() {
 		this.lista=new ArrayList<Habitacion>();
 	}
 	
 	public static Casa getCasa() {
-		if(Casa.listahab==null) {
-			Casa.listahab= new Casa();
+		if(Casa.miCasa==null) {
+			Casa.miCasa= new Casa();
 		}
-		return Casa.listahab;
+		return Casa.miCasa;
 	}
 	private Iterator<Habitacion> getIterator(){
 		return this.lista.iterator();
@@ -57,6 +57,7 @@ public class Casa {
 		{
 			residente = new Residente((int)(Math.random()*this.getNumHabitaciones()-1)+1);
 			listaResidentes.nuevoResidente(residente);
+			numResidentes = numResidentes-1;
 		}
 	}
 	public void crearCasa()

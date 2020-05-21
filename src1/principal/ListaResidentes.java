@@ -48,7 +48,9 @@ private ArrayList <Residente> listaR;
 		return itr;
 	}
 	public void nuevoResidente(Residente pResidente)
-	{listaR.add(pResidente);}
+	{
+		listaR.add(pResidente);
+	}
 	
 	public boolean haPerdido() 
 	{
