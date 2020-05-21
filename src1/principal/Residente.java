@@ -22,7 +22,10 @@ public void moverse(int nuevaID)
 {
 	this.idHabitacionActual = nuevaID;
 }
-
+public int getIDHabitacion()
+{
+	return this.idHabitacionActual;
+}
 /*public abstract int getProbabilidadNoqueo(){
 	int prob=this.;
 	if (this.adulto!=null) {prob=this.adulto.probNoqueo;}

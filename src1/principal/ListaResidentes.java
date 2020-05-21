@@ -26,9 +26,20 @@ private ArrayList <Residente> listaR;
 		return miListaU;
 	}
 
-	public int obtenerNumResidentes()
+	public int obtenerNumResidentes(int idHabitacion)
 	{
-		return listaR.size();
+		Iterator<Residente> itr = this.getIterador();
+		Residente residente;
+		int numResidentesEnHabitacion = 0;
+		while (itr.hasNext())
+		{
+			residente = itr.next();
+			if (residente.getIDHabitacion()==idHabitacion)
+			{
+				numResidentesEnHabitacion = numResidentesEnHabitacion + 1;
+			}
+		}
+		return numResidentesEnHabitacion;
 	}
 
 	private Iterator<Residente> getIterador()

@@ -1,8 +1,22 @@
 package principal;
 
 public class ClasePrincipal {
+
+	private static ClasePrincipal miClasePrincipal = null;
+
+	private ClasePrincipal() 
+	{
+		
+	}
 	
-public ClasePrincipal() {}
+	public static ClasePrincipal getClasePrincipal()
+	{
+		if (miClasePrincipal == null)
+		{
+			miClasePrincipal = new ClasePrincipal();
+		}
+		return miClasePrincipal;
+	}
 	
 	public void jugarUnaPartida() 
 	{
@@ -12,7 +26,7 @@ public ClasePrincipal() {}
 		System.out.println("Usted ha entrado en una casa con "+ casa.getNumHabitaciones() +". Su objetivo es robar todo lo que pueda y salir sin ser visto.");
 		System.out.println("Cuando se le pida ejecutar una accion, utilice el teclado.");
 		System.out.println("Para moverse introduzca un numero entre 1 y "+ casa.getNumHabitaciones() +"(el numero total de habitaciones que hay).");
-		System.out.println("Para saquear la habitacion introduzca el numero 0 por el teclado. Recuerde que saquear una habitacion tambien supondra un turno.");
+		System.out.println("Para saquear la habitacion introduzca el numero de la habitacion en la que se encuentra por el teclado. Recuerde que saquear una habitacion tambien supondra un turno.");
 		System.out.println("Para salir de la casa introduzca cualquier numero que no este en el rango de habitaciones y que no sea 0 por teclado.");
 		System.out.println("Si coincide usted con algun residente de la casa, este lo delatara y perdera la partida. ");
 		System.out.println("Empezamos");
@@ -24,12 +38,26 @@ public ClasePrincipal() {}
 		while (jugador.getIDHabitacion() != 0 && !jugador.haPerdido())
 		{
 			entradaTeclado = teclado.leerTeclado();
-			if (entradaTeclado >= 0 && entradaTeclado <= casa.getNumHabitaciones())
+			if (entradaTeclado > 0 && entradaTeclado <= casa.getNumHabitaciones() && entradaTeclado != jugador.getIDHabitacion())
 			{
 				jugador.cambiarHabitacion(entradaTeclado);
-				casa.moverResidentes();
-				casa.
 			}
+			else if (entradaTeclado == jugador.getIDHabitacion())
+			{
+				jugador.saquearHabtiacion();
+			}
+			else if (entradaTeclado == 0)
+			{
+				System.out.println("Introduzca por teclado el identificador de la habitacion que desea escuchar.");
+				entradaTeclado = teclado.leerTeclado();
+				jugador.ruidoEnHabitacion(entradaTeclado);
+			}
+			else 
+			{
+				jugador.salirDeCasa();
+			}
+			casa.moverResidentes();
+			casa.comprobarSiHaPerdido();
 		}
 	}
 }

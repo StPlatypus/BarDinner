@@ -29,13 +29,14 @@ public class Jugador {
 	}
 
 	public boolean ruidoEnHabitacion(int pIdHabitacion) {
-		boolean hay_alguien=false;
-		Casa casa = Casa.getCasa();
-		Habitacion habi=casa.buscarHabitacionPorID(pIdHabitacion);
-		if(habi.getNumResidentes() != 0) {
-			hay_alguien=true;
+		if(ListaResidentes.getListaResidentes().obtenerNumResidentes(pIdHabitacion) != 0 && (Math.random()) <= 0.8) 
+		{
+			return true;
 		}
-		return hay_alguien;
+		else
+		{
+			return false;
+		}
 	}
 	public void cambiarHabitacion(int pIdHabitacion) {
 		this.idHabitacionActual=pIdHabitacion;
