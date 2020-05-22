@@ -26,29 +26,21 @@ public class ClaseCasaDePrueba {
 	public Habitacion buscarHabitacionPorID(int id)
 	{
 		Iterator<Habitacion> itr = this.getIterator();
-		boolean es = false;
 		Habitacion habitacion = null;
-		while (itr.hasNext() && !es) {
+		while (itr.hasNext())
+		{
 			habitacion = itr.next();
 			if (habitacion.getIDHabitacion() == id)
 			{
-				es = true;
+				return habitacion;
 			}
 		}
-		if (es)
-		{
-			return habitacion;
-		}
-		else
-		{
-			System.out.println("Error. La habitacion que busca no existe.");
-			return null;
-		}
+		return null;
 	}
 	private void crearResidentes()
 	{
 		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
-		int numResidentes = (int)(Math.random()*3)+3;
+		int numResidentes = (int)(Math.random()*2)+1;
 		Residente residente;
 		while (numResidentes != 0)
 		{
@@ -89,6 +81,10 @@ public class ClaseCasaDePrueba {
 	{
 		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
 		listaResidentes.moverResidentes(this.getNumHabitaciones());
+	}
+	public void resetear()
+	{
+		this.lista = new ArrayList<Habitacion>();
 	}
 	//Acabado
 }

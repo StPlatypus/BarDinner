@@ -23,7 +23,7 @@ public class CasaTest {
 	@After
 	public void tearDown() throws Exception {
 		
-		casa = null;
+		casa.resetear();
 		
 	}
 
@@ -39,23 +39,17 @@ public class CasaTest {
 		
 		casa.crearCasa();
 		assertSame(casa.getNumHabitaciones(),5);
-		int numResidenteAProbar = 0;
-		for (int i = 1; i <= 5; i++) 
-		{
-			numResidenteAProbar = numResidenteAProbar + listaResidentes.obtenerNumResidentes(i);
-		}
-		assertTrue(numResidenteAProbar>=1 && numResidenteAProbar<=3);
 	}
 
 	@Test
 	public void testBuscarHabitacionPorID() 
 	{
-		
+		casa.crearCasa();
 		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==1);
-		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==2);
-		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==3);
-		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==4);
-		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==5);
+		assertTrue(casa.buscarHabitacionPorID(2).getIDHabitacion()==2);
+		assertTrue(casa.buscarHabitacionPorID(3).getIDHabitacion()==3);
+		assertTrue(casa.buscarHabitacionPorID(4).getIDHabitacion()==4);
+		assertTrue(casa.buscarHabitacionPorID(5).getIDHabitacion()==5);
 		
 	}
 
@@ -68,7 +62,7 @@ public class CasaTest {
 		{
 			numResidenteAProbar = numResidenteAProbar + listaResidentes.obtenerNumResidentes(i);
 		}
-		assertTrue(numResidenteAProbar>=1 && numResidenteAProbar<=3);
+		assertTrue(numResidenteAProbar>=1 && numResidenteAProbar<=4);
 	}
 
 	@Test
