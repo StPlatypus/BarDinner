@@ -51,11 +51,11 @@ public class Casa {
 	private void crearResidentes()
 	{
 		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
-		int numResidentes = (int)(Math.random()*3)+3;
+		int numResidentes = (int)(Math.random()*2)+1;
 		Residente residente;
 		while (numResidentes != 0)
 		{
-			residente = new Residente((int)(Math.random()*this.getNumHabitaciones()-1)+1);
+			residente = new Residente((int)(Math.random()*this.getNumHabitaciones()-1)+2);
 			listaResidentes.nuevoResidente(residente);
 			numResidentes = numResidentes-1;
 		}
