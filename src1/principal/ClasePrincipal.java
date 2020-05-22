@@ -69,6 +69,7 @@ public class ClasePrincipal {
 		}
 		else {
 			System.out.println("Has escapado con exito!!!");
+			System.out.println("Has conseguido obtener un botin de "+ jugador.getBotin());
 		}
 	}
 		
