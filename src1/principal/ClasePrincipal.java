@@ -39,7 +39,7 @@ public class ClasePrincipal {
 		Teclado teclado = Teclado.getTeclado();
 		casa.crearCasa();
 		int entradaTeclado;
-		System.out.println("Parece que estoy en una casa de " +casa.getNumHabitaciones()+" habitaciones, estoy en la habitacion 0");
+		System.out.println("Parece que estoy en una casa de " +casa.getNumHabitaciones()+" habitaciones, estoy en la habitacion 1");
 		while (jugador.getIDHabitacion() != 0 && !jugador.haPerdido())
 		{
 			entradaTeclado = teclado.leerTeclado();
@@ -52,8 +52,9 @@ public class ClasePrincipal {
 			{
 				jugador.saquearHabtiacion();
 				System.out.println("He saqueado la habitacion "+ entradaTeclado);
-				System.out.println("Mi nuevo botin es  "+jugador.getBotin());
+				System.out.println("Mi nuevo botin es  "+jugador.getBotin()+"€");
 			}
+
 			else if (entradaTeclado == 0)
 			{
 				System.out.println("Introduzca por teclado el identificador de la habitacion que desea escuchar: ");
