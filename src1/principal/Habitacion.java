@@ -29,11 +29,6 @@ public abstract class Habitacion {
 		return this.metrosCuadrados;
 	}
 	
-	public int getBotinTotal()
-	{
-		return this.botinTotal;
-	}
-	
 	private int asignarIDHabitacion() {
 		Casa c = Casa.getCasa();
 		return c.getNumHabitaciones();
@@ -42,6 +37,11 @@ public abstract class Habitacion {
 	{
 		return this.idHabitacion;
 	} 
+	public int saquear()
+	{
+		this.botinTotal = 0;
+		return this.botinTotal;
+	}
 	
 	
 }
