@@ -29,7 +29,7 @@ public class ClasePrincipal {
 		System.out.println("Para saquear la habitacion introduzca el numero de la habitacion en la que se encuentra por el teclado. Recuerde que saquear una habitacion tambien supondra un turno.");
 		System.out.println("Para salir de la casa introduzca cualquier numero que no este en el rango de habitaciones y que no sea 0 por teclado.");
 		System.out.println("Si coincide usted con algun residente de la casa, este lo delatara y perdera la partida. ");
-		System.out.println("Empezamos");
+		System.out.println("Empezamos: ");
 		Jugador jugador = Jugador.getJugador();
 		Teclado teclado = Teclado.getTeclado();
 		casa.crearCasa();
@@ -41,23 +41,37 @@ public class ClasePrincipal {
 			if (entradaTeclado > 0 && entradaTeclado <= casa.getNumHabitaciones() && entradaTeclado != jugador.getIDHabitacion())
 			{
 				jugador.cambiarHabitacion(entradaTeclado);
+				System.out.println("Voy a cambiar a la habitacion "+entradaTeclado);
 			}
 			else if (entradaTeclado == jugador.getIDHabitacion())
 			{
 				jugador.saquearHabtiacion();
+				System.out.println("He saqueado la habitacion "+ entradaTeclado);
+				System.out.println("Mi nuevo botin es  "+jugador.getBotin());
 			}
 			else if (entradaTeclado == 0)
 			{
-				System.out.println("Introduzca por teclado el identificador de la habitacion que desea escuchar.");
+				System.out.println("Introduzca por teclado el identificador de la habitacion que desea escuchar: ");
 				entradaTeclado = teclado.leerTeclado();
 				jugador.ruidoEnHabitacion(entradaTeclado);
 			}
 			else 
-			{
+			{	System.out.println("Voy a intentar salir de casa.");
 				jugador.salirDeCasa();
 			}
+			
 			casa.moverResidentes();
 			casa.comprobarSiHaPerdido();
 		}
+		if (jugador.haPerdido()==true)
+		{
+			System.out.println("Vaya, te han pillado! has perdido todo tu dinero.");
+		}
+		else {
+			System.out.println("Has escapado con exito!!!");
+		}
 	}
-}
+		
+			
+		
+	}
