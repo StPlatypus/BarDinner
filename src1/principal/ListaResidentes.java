@@ -52,12 +52,31 @@ private ArrayList <Residente> listaR;
 		listaR.add(pResidente);
 	}
 	
-	public boolean haPerdido() 
+	public void haPerdido() 
 	{
 		Iterator<Residente> itr =this.getIterador();
 		Residente residente;
-		residente = itr.next();
-		return residente.delatarAJugador();
+		boolean haPerdido = false;
+		while (itr.hasNext() && !haPerdido)
+		{
+			residente = itr.next();
+			if (residente.delatarAJugador())
+			{
+				haPerdido = true;
+			}
+		}
+	}
+	public void crearResidentes()
+	{
+		Casa casa = Casa.getCasa();
+		int numResidentes = (int)(Math.random()*2)+2;
+		Residente residente;
+		while (numResidentes != 0)
+		{
+			residente = new Residente((int)(Math.random()*casa.getNumHabitaciones()-1)+2);
+			this.nuevoResidente(residente);
+			numResidentes = numResidentes-1;
+		}
 	}
 	public void moverResidentes(int numHabitaciones)
 	{
@@ -74,6 +93,10 @@ private ArrayList <Residente> listaR;
 			}
 			
 		} 
+	}
+	public void resetear()
+	{
+		this.listaR = new ArrayList<Residente>();
 	}
 
 }

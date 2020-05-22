@@ -3,9 +3,9 @@ package principal;
 public class Cuarto extends Habitacion{
 	//constructora
 	
-	public Cuarto()
+	public Cuarto(int pID)
 	{
-		super();
+		super(pID);
 	}
 				
 	//metodos

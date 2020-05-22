@@ -10,9 +10,9 @@ public abstract class Habitacion {
 	
 	//constructora
 	
-	public Habitacion()
+	public Habitacion(int pID)
 	{
-		this.idHabitacion = this.asignarIDHabitacion();
+		this.idHabitacion = pID;
 	  //this.metrosCuadrados = this.asignarMetrosCuadrados();
 		this.botinTotal = this.asignarBotinTotal();
 		
@@ -30,11 +30,6 @@ public abstract class Habitacion {
 		return this.metrosCuadrados;
 	}
 	*/
-	
-	private int asignarIDHabitacion() {
-		Casa c = Casa.getCasa();
-		return c.getNumHabitaciones();
-	}
 	public int getIDHabitacion()
 	{
 		return this.idHabitacion;

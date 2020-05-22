@@ -52,7 +52,7 @@ public class ClasePrincipal {
 			{
 				jugador.saquearHabtiacion();
 				System.out.println("He saqueado la habitacion "+ entradaTeclado);
-				System.out.println("Mi nuevo botin es  "+jugador.getBotin()+"€");
+				System.out.println("Mi nuevo botin es  "+jugador.getBotin());
 			}
 
 			else if (entradaTeclado == 0)
@@ -68,14 +68,15 @@ public class ClasePrincipal {
 			
 			casa.moverResidentes();
 			casa.comprobarSiHaPerdido();
+			
 		}
 		if (jugador.haPerdido()==true)
 		{
-			System.out.println("Vaya, te han pillado! has perdido todo tu dinero. " + jugador.getBotin()+"€");
+			System.out.println("Vaya, te han pillado! has perdido todo tu dinero. ");
 		}
 		else {
 
-			System.out.println("Has escapado con exito!!! Has conseguido: "+ jugador.getBotin() +"€");
+			System.out.println("Has escapado con exito!!! Has conseguido: "+ jugador.getBotin());
 
 			
 			System.out.println("Has conseguido obtener un botin de "+ jugador.getBotin());

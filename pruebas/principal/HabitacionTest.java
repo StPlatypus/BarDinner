@@ -17,10 +17,10 @@ public class HabitacionTest {
 	@Before
 	public void setUp() throws Exception {
 		
-		banio = new Banio();
-		cocina = new Cocina();
-		salon = new Salon();
-		cuarto = new Cuarto();
+		banio = new Banio(1);
+		cocina = new Cocina(2);
+		salon = new Salon(3);
+		cuarto = new Cuarto(4);
 		jugador = Jugador.getJugador();
 	}
 

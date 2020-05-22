@@ -3,9 +3,9 @@ package principal;
 public class Salon extends Habitacion{
 	//constructora
 	
-	public Salon()
+	public Salon(int pID)
 	{
-		super();
+		super(pID);
 	}
 		
 	//metodos

@@ -3,9 +3,9 @@ package principal;
 public class Banio extends Habitacion{
 	//constructora
 	
-	public Banio()
+	public Banio(int pID)
 	{
-		super();
+		super(pID);
 	}
 	
 	//metodos
