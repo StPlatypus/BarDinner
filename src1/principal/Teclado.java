@@ -24,7 +24,7 @@ public static Teclado getTeclado()
 }
 public int leerTeclado()
 {	int entradaTeclado=0;
-boolean chivato=true;//chivato
+boolean chivato=true;
 while (chivato==true){//se hace loop hasta que se meta un valor aceptable
 	try{
 	entradaTeclado = sc.nextInt();
