@@ -10,11 +10,13 @@ public class CasaTest {
 	
 	ClaseCasaDePrueba casa;
 	Habitacion habitacion;
-
+	ListaResidentes listaResidentes;
+	
 	@Before
 	public void setUp() throws Exception {
 		
 		casa = ClaseCasaDePrueba.getCasa();
+		listaResidentes = ListaResidentes.getListaResidentes();
 		
 	}
 
@@ -37,18 +39,36 @@ public class CasaTest {
 		
 		casa.crearCasa();
 		assertSame(casa.getNumHabitaciones(),5);
+		int numResidenteAProbar = 0;
+		for (int i = 1; i <= 5; i++) 
+		{
+			numResidenteAProbar = numResidenteAProbar + listaResidentes.obtenerNumResidentes(i);
+		}
+		assertTrue(numResidenteAProbar>=1 && numResidenteAProbar<=3);
 	}
 
 	@Test
-	public void testBuscarHabitacionPorID() {
-		;
+	public void testBuscarHabitacionPorID() 
+	{
+		
+		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==1);
+		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==2);
+		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==3);
+		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==4);
+		assertTrue(casa.buscarHabitacionPorID(1).getIDHabitacion()==5);
+		
 	}
 
 	@Test
 	public void testCrearCasa() {
 		casa.crearCasa();
-		System.out.println(casa.getNumHabitaciones());
-		assertTrue(casa.getNumHabitaciones()>=5 && casa.getNumHabitaciones()<=10);
+		assertSame(casa.getNumHabitaciones(),5);
+		int numResidenteAProbar = 0;
+		for (int i = 1; i <= 5; i++) 
+		{
+			numResidenteAProbar = numResidenteAProbar + listaResidentes.obtenerNumResidentes(i);
+		}
+		assertTrue(numResidenteAProbar>=1 && numResidenteAProbar<=3);
 	}
 
 	@Test
