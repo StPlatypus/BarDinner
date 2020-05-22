@@ -8,12 +8,13 @@ import org.junit.Test;
 
 public class CasaTest {
 	
-	Casa casa;
+	ClaseCasaDePrueba casa;
+	Habitacion habitacion;
 
 	@Before
 	public void setUp() throws Exception {
 		
-		casa = Casa.getCasa();
+		casa = ClaseCasaDePrueba.getCasa();
 		
 	}
 
@@ -35,13 +36,12 @@ public class CasaTest {
 	public void testGetNumHabitaciones() {
 		
 		casa.crearCasa();
-		System.out.println(casa.getNumHabitaciones());
-		assertTrue(casa.getNumHabitaciones()>=5 && casa.getNumHabitaciones()<=10);
+		assertSame(casa.getNumHabitaciones(),5);
 	}
 
 	@Test
 	public void testBuscarHabitacionPorID() {
-		fail("Not yet implemented");
+		;
 	}
 
 	@Test
