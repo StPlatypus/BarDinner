@@ -35,7 +35,7 @@ public class Jugador {
 		}
 		else
 		{
-			System.out.println("No he oido nada.");
+			System.out.println("No he oido nada. No parece que haya nadie");
 		}
 	}
 	public void cambiarHabitacion(int pIdHabitacion) {
