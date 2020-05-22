@@ -37,7 +37,7 @@ public class ClasePrincipal {
 		
 		Jugador jugador = Jugador.getJugador();
 		Teclado teclado = Teclado.getTeclado();
-		casa.crearCasa();
+		
 		int entradaTeclado;
 		System.out.println("Parece que estoy en una casa de " +casa.getNumHabitaciones()+" habitaciones, estoy en la habitacion 1");
 		while (jugador.getIDHabitacion() != 0 && !jugador.haPerdido())
@@ -74,7 +74,11 @@ public class ClasePrincipal {
 			System.out.println("Vaya, te han pillado! has perdido todo tu dinero. " + jugador.getBotin()+"€");
 		}
 		else {
+
 			System.out.println("Has escapado con exito!!! Has conseguido: "+ jugador.getBotin() +"€");
+
+			
+			System.out.println("Has conseguido obtener un botin de "+ jugador.getBotin());
 		}
 	}
 		
