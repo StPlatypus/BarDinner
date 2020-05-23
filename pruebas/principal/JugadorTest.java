@@ -9,10 +9,12 @@ import org.junit.Test;
 public class JugadorTest {
 	Casa casa;
 	Jugador jugador;
+	ListaResidentes listaResidentes;
 	@Before
 	public void setUp() throws Exception {
 		jugador = Jugador.getJugador();
 		casa = Casa.getCasa();
+		listaResidentes = ListaResidentes.getListaResidentes();
 	}
 
 	@After
@@ -27,16 +29,42 @@ public class JugadorTest {
 
 	@Test
 	public void testSaquearHabtiacion() {
-		System.out.println(jugador.getBotin());
-		jugador.cambiarHabitacion(2);
-		jugador.saquearHabtiacion();
-		System.out.println(jugador.getBotin());
-		assertNotSame(jugador.getBotin(),0);
+		int botinAcumulado = 0;
+		casa.crearCasa();
+		ListaResidentes.getListaResidentes().resetear();
+		for (int i = 1; i<=casa.getNumHabitaciones(); i++)
+		{
+			jugador.cambiarHabitacion(i);
+			jugador.saquearHabtiacion();
+			System.out.println(jugador.getBotin() + ">" + botinAcumulado);
+			assertTrue(jugador.getBotin() > botinAcumulado);
+			botinAcumulado = jugador.getBotin();
+		}
 	}
 
 	@Test
 	public void testRuidoEnHabitacion() {
-		fail("Not yet implemented");
+		casa.crearCasa();
+		for (int i = 1; i<=casa.getNumHabitaciones(); i++)
+		{
+			if (listaResidentes.obtenerNumResidentes(i)!=0)
+			{
+				System.out.println("Se ha detectado que hay alguien en la habitacion. Asi que se va a imprimir 10 veces la respuesta de si hay residentes o no.");
+				System.out.println("Mas o menos, 8 de las 10 veces debe decir que ha oido a alguien y dos que no.");
+				for (int j = 1; j<=10;j++)
+				{
+					jugador.ruidoEnHabitacion(i);
+				}
+			}
+			else 
+			{
+				System.out.println("No hay nadie en la habitacion, de forma que no se debe de imprimir ni una vez que hay alguien.");
+				for (int j = 1; j<=4;j++)
+				{
+					jugador.ruidoEnHabitacion(i);
+				}
+			}
+		}
 	}
 
 	@Test
