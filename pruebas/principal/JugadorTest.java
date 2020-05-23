@@ -17,7 +17,7 @@ public class JugadorTest {
 
 	@After
 	public void tearDown() throws Exception {
-		jugador = null;
+		jugador.resetear();
 	}
 
 	@Test
@@ -41,27 +41,49 @@ public class JugadorTest {
 
 	@Test
 	public void testCambiarHabitacion() {
-		fail("Not yet implemented");
+		jugador.cambiarHabitacion(1);
+		assertSame(jugador.getIDHabitacion(),1);
+		jugador.cambiarHabitacion(2);
+		assertSame(jugador.getIDHabitacion(),2);
+		jugador.cambiarHabitacion(3);
+		assertSame(jugador.getIDHabitacion(),3);
+		jugador.cambiarHabitacion(4);
+		assertSame(jugador.getIDHabitacion(),4);
+		jugador.cambiarHabitacion(5);
+		assertSame(jugador.getIDHabitacion(),5);
 	}
 
 	@Test
 	public void testSalirDeCasa() {
-		fail("Not yet implemented");
+		jugador.salirDeCasa();
+		assertSame(jugador.getIDHabitacion(),0);
 	}
 
 	@Test
 	public void testGetIDHabitacion() {
-		fail("Not yet implemented");
+		assertSame(jugador.getIDHabitacion(),1);
+		jugador.cambiarHabitacion(2);
+		assertSame(jugador.getIDHabitacion(),2);
+		jugador.cambiarHabitacion(3);
+		assertSame(jugador.getIDHabitacion(),3);
+		jugador.cambiarHabitacion(4);
+		assertSame(jugador.getIDHabitacion(),4);
+		jugador.cambiarHabitacion(5);
+		assertSame(jugador.getIDHabitacion(),5);
 	}
 
 	@Test
 	public void testPerderPartida() {
-		fail("Not yet implemented");
+		assertFalse(jugador.haPerdido());
+		jugador.perderPartida();
+		assertTrue(jugador.haPerdido());
 	}
 
 	@Test
 	public void testHaPerdido() {
-		fail("Not yet implemented");
+		assertFalse(jugador.haPerdido());
+		jugador.perderPartida();
+		assertTrue(jugador.haPerdido());
 	}
 
 }

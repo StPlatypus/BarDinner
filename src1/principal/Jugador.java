@@ -60,6 +60,12 @@ public class Jugador {
 	{
 		return this.botin;
 	}
+	public void resetear()
+	{
+		this.botin = 0;
+		this.idHabitacionActual = 1;
+		this.delatado = false;
+	}
 	/*public void golpearResidente() {
 		
 	}
