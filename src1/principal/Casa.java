@@ -76,6 +76,10 @@ public class Casa {
 		ListaResidentes listaResidentes = ListaResidentes.getListaResidentes();
 		listaResidentes.moverResidentes(this.getNumHabitaciones());
 	}
+	public void resetear() //Este metodo se utiliza para hacer las pruebas.
+	{
+		this.lista = new ArrayList<Habitacion>();
+	}
 	
 	//Acabado
 }

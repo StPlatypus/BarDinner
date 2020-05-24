@@ -47,7 +47,7 @@ private ArrayList <Residente> listaR;
 		Iterator <Residente> itr=this.listaR.iterator();
 		return itr;
 	}
-	public void nuevoResidente(Residente pResidente)
+	private void nuevoResidente(Residente pResidente)
 	{
 		listaR.add(pResidente);
 	}
