@@ -28,7 +28,6 @@ boolean chivato=true;
 while (chivato==true){//se hace loop hasta que se meta un valor aceptable
 	try{
 	entradaTeclado = sc.nextInt();
-	System.out.println(entradaTeclado);
 	chivato=false;
 	
 	}catch (InputMismatchException exception) //Esta excepcion salta cuando lo que recoge el scanner no coincide con lo que era en un principio
