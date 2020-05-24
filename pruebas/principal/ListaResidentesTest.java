@@ -12,6 +12,7 @@ public class ListaResidentesTest {
 	Casa casa;
 	Residente r1;
 	Jugador j1;
+	
 	@Before
 	public void setUp() throws Exception {
 		
