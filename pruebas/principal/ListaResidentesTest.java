@@ -42,21 +42,15 @@ public class ListaResidentesTest {
 
 	@Test
 	public void testObtenerNumResidentes() {
-		assertSame(1,listaR.obtenerNumResidentes(1));
+		assertSame(1,listaR.obtenerNumResidentes(2));
 		assertNotSame(1,listaR.obtenerNumResidentes(casa.getNumHabitaciones()));
-	}
-
-	@Test
-	public void testNuevoResidente() {
-		
-		
-		
 	}
 
 	@Test
 	public void testHaPerdido() {
 		assertFalse(j1.haPerdido());
 		r1.moverse(2);	
+		j1.cambiarHabitacion(2);
 		listaR.haPerdido();
 		assertTrue(j1.haPerdido());
 	}
@@ -69,7 +63,7 @@ public class ListaResidentesTest {
 			a=a+listaR.obtenerNumResidentes(i);
 		}
 		System.out.println(a);
-		assertTrue(a>=2 && a<=5);
+		assertTrue(a>=2 && a<=6);
 	}
 
 	@Test
