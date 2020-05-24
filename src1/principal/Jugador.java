@@ -24,7 +24,6 @@ public class Jugador {
 		//otros metodos
 	public void saquearHabtiacion() {
 		Casa casa = Casa.getCasa();
-		casa.buscarHabitacionPorID(this.idHabitacionActual);
 		this.botin=this.botin + casa.buscarHabitacionPorID(this.idHabitacionActual).saquear();
 		
 	}
